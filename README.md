@@ -1,2 +1,8 @@
-# Polynomial-hashing-and-substring-search-in-O-N-M-
-Rabin-Karp algorithm in Python
+# Polynomial hashing and substring search in O(N+M)
+Basic version of the Rabin-Karp algorithm for string matching.
+
+In the Rabin-Karp algorithm, the hash function calculates a hash value for a given string by treating it as a base-b number, where each character in the string is a digit in the base-b representation. The unhash function can then be used to recover the original string from the hash values by treating the hash values as base-b digits and converting them back to the corresponding characters.
+
+The find_sub function uses the hash function and the unhash function to search for a substring within a larger string by calculating the hash values for the larger string and the search string, and then comparing the hash values to see if they match. If the hash values match, the find_sub function uses the unhash function to check if the actual characters of the strings match, and if they do, it returns the starting position of the substring within the larger string. If the hash values do not match, or if the actual characters do not match after unhashing, the find_sub function returns -1 to indicate that the substring was not found.
+
+Overall, the Rabin-Karp algorithm is a fast and efficient way to search for a substring within a larger string, with a time complexity of O(n+m) for searching a string of length n for a substring of length m. However, it is not a completely foolproof method and can produce false positives (incorrectly identifying a match) in certain cases, due to the use of a hash function which can produce collisions (different strings with the same hash value).
